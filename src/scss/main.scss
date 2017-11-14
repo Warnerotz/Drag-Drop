@@ -14,9 +14,29 @@ header{
     
 }
 
-.imagen{
-   margin: 0 auto;
-   //filter:brightness(5%); 
+.oscuro{    
+  filter: brightness(0%);  
 }
 
+.imagen{
+   width: 100%;
+  
+    padding: 10px; 
+ 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25%;
+}
+
+#bulbasur{
+        margin-top: 5%;
+    
+}
+
+#squirtel{
+    margin-top: 18%;
+}
 

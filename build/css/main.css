@@ -1,1 +1,1 @@
-body{background-color:#f2f2f2}.centrado{margin:0 auto}header{text-align:center;background-color:burlywood;height:70px}.imagen{margin:0 auto}
+body{background-color:#f2f2f2}.centrado{margin:0 auto}header{text-align:center;background-color:burlywood;height:70px}.oscuro{filter:brightness(0%)}.imagen{width:100%;padding:10px}.grid{display:grid;grid-template-columns:25% 25% 25% 25%;grid-template-rows:25% 25%}#bulbasur{margin-top:5%}#squirtel{margin-top:18%}
