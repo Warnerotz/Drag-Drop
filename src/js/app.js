@@ -27,14 +27,11 @@ window.onload = function () {
 
     //las imagnes claras solo dragstart y dragend
 
-    bulbasur.addEventListener("dragstart", inArrastrar, false);
-    bulbasur.addEventListener("dragend", finArrastrar, false);
-    charmander.addEventListener("dragstart", inArrastrar, false);
-    charmander.addEventListener("dragend", finArrastrar, false);
-    picachu.addEventListener("dragstart", inArrastrar, false);
-    picachu.addEventListener("dragend", finArrastrar, false);
+    bulbasur.addEventListener("dragstart", inArrastrar, false);   
+    charmander.addEventListener("dragstart", inArrastrar, false);    
+    picachu.addEventListener("dragstart", inArrastrar, false);    
     squirtel.addEventListener("dragstart", inArrastrar, false);
-    squirtel.addEventListener("dragend", finArrastrar, false);
+   
 
 
     //oscuras dragenter dragleave drop dragover   
@@ -58,7 +55,8 @@ window.onload = function () {
     squirtOsc.addEventListener("drop", soltar, false);
     squirtOsc.addEventListener("dragover", prevent, false);
 
-
+// funcion que se ejecuta al iniciar el drag pongo la variable porque para algunos eventos
+// no me funciona el getData
     function inArrastrar(ev) {
         seleccionado = ev.target.id;
         ev.dataTransfer.setData("text", ev.target.id);
@@ -68,15 +66,14 @@ window.onload = function () {
         //dragged.style.opacity = 0.5;
     }
 
+//funcion para prevenir la accion por defecto
     function prevent(ev) {
 
         ev.preventDefault();
     }
 
-    function finArrastrar(ev) {
-
-    }
-
+  
+//funcion para cuando hace el dragenter
     function entrar(ev) {
         var data = seleccionado;
         //var data = ev.dataTransfer.getData("text");
@@ -89,7 +86,7 @@ window.onload = function () {
 
 
     }
-
+//funcion que coloca el fondo segun corresponda
     function colocarFondo(valor, data) {
         if (data == "bulbasur") {
             switch (valor) {
@@ -167,7 +164,7 @@ window.onload = function () {
     }
 
 
-
+//funcion que se ejecuta cuando se hace el dragleave
     function salir(ev) {
         var data = seleccionado;
         //var data = ev.dataTransfer.getData("text");
@@ -176,7 +173,7 @@ window.onload = function () {
         document.getElementById("pic").style.backgroundColor= "";
         document.getElementById("squir").style.backgroundColor= "";
     }
-
+//funcion que se ejecuta cuando se hace el drop
     function soltar(ev) {
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
@@ -187,6 +184,7 @@ window.onload = function () {
                     document.getElementById("bulb").appendChild(document.getElementById(data));
                     document.getElementById(data).setAttribute("draggable", "false");
                     document.getElementById("bulb").removeChild(document.getElementById(this.id));
+                    document.getElementById("bulb").style.backgroundColor ="";
                 }
                 break;
 
@@ -196,6 +194,7 @@ window.onload = function () {
                     document.getElementById("char").appendChild(document.getElementById(data));
                     document.getElementById(data).setAttribute("draggable", "false");
                     document.getElementById("char").removeChild(document.getElementById(this.id));
+                    document.getElementById("char").style.backgroundColor ="";
 
                 }
                 break;
@@ -205,6 +204,7 @@ window.onload = function () {
                     document.getElementById("pic").appendChild(document.getElementById(data));
                     document.getElementById(data).setAttribute("draggable", "false");
                     document.getElementById("pic").removeChild(document.getElementById(this.id));
+                    document.getElementById("pic").style.backgroundColor ="";
 
                 }
                 break;
@@ -213,6 +213,7 @@ window.onload = function () {
                     document.getElementById("squir").appendChild(document.getElementById(data));
                     document.getElementById(data).setAttribute("draggable", "false");
                     document.getElementById("squir").removeChild(document.getElementById(this.id));
+                    document.getElementById("squir").style.backgroundColor ="";
 
                 }
                 break;
