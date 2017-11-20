@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 window.onload = function () {
     var seleccionado;
-
+    document.getElementById("reini").addEventListener("click", reiniciar,false);
     //bulbasur
     var bulbOsc = document.getElementById("bulbasurOsc");
     var bulbasur = document.getElementById("bulbasur");
@@ -223,3 +223,8 @@ window.onload = function () {
 
     }
 }
+
+
+function reiniciar() {
+        window.location.reload();
+    }
